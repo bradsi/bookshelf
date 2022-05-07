@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - '**.php'
+  push:
+    branches:
+      - main
 
 jobs:
   style:
@@ -12,19 +15,16 @@ jobs:
     steps:
       -   name: Checkout code
           uses: actions/checkout@v2
+          with:
+            ref: ${{ github.head_ref }}
 
       -   name: Fix style
           uses: docker://oskarstark/php-cs-fixer-ga
           with:
             args: --config=.php-cs-fixer.php --allow-risky=yes
 
-      -   name: Extract branch name
-          shell: bash
-          run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-          id: extract_branch
-
       -   name: Commit changes
-          uses: stefanzweifel/git-auto-commit-action@v2.3.0
+          uses: stefanzweifel/git-auto-commit-action@v4
           with:
             commit_message: Fix styling
           env:
