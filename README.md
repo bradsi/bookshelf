@@ -5,7 +5,8 @@ My goals with the project are as follows:
 - [ ] Use [Rector](https://github.com/rectorphp/rector) and/or [Rector Laravel](https://github.com/rectorphp/rector-laravel) to upgrade from PHP 7.4 to PHP 8.1
 - [ ] Practice unit testing and feature testing using [Pest](https://github.com/pestphp/pest) and implement [PCOV](https://github.com/krakjoe/pcov)
 - [ ] Create a style guide based on [PSR](https://www.php-fig.org/psr/)
-- [ ] Implement the style guide with tools like [PHPStan](https://github.com/phpstan/phpstan)
+- [ ] Implement the style guide with [PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+- [x] Implement static analysis with [PHPStan](https://github.com/phpstan/phpstan) and [Larastan](https://github.com/nunomaduro/larastan)
 - [ ] Setup GitHub Actions or Bitbucket Pipelines to run CI i.e. Pest, PCOV, PHPStan
 - [ ] Containerise the application using Docker
 - [ ] Put into practice what I've learned from Jonathan Reinink's Eloquent Performance Patterns course
