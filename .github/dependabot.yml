@@ -1,0 +1,58 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+
+  # Maintain dependencies for Github Actions
+  - package-ecosystem: "github-actions"
+    # Relative to '.github/workflows'
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:30"
+      timezone: "Europe/London"
+    assignees:
+      - "bradsi"
+    reviewers:
+      - "bradsi"
+    commit-message:
+      prefix: "github-actions"
+    target-branch: "develop"
+
+  # Maintain dependencies for Composer
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:30"
+      timezone: "Europe/London"
+    assignees:
+      - "bradsi"
+    reviewers:
+      - "bradsi"
+    commit-message:
+      prefix: "Composer"
+      include: "scope"
+    target-branch: "develop"
+      
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:30"
+      timezone: "Europe/London"
+    assignees:
+      - "bradsi"
+    reviewers:
+      - "bradsi"
+    commit-message:
+      prefix: "npm"
+      include: "scope"
+    target-branch: "develop"
