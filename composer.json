@@ -15,6 +15,7 @@
     "require-dev": {
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
+        "friendsofphp/php-cs-fixer": "^3.8",
         "laravel/breeze": "^1.9",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
@@ -54,7 +55,8 @@
         "analyse-l6" : "./vendor/bin/phpstan analyse --level=6",
         "analyse-l7" : "./vendor/bin/phpstan analyse --level=7",
         "analyse-l8" : "./vendor/bin/phpstan analyse --level=8",
-        "analyse-l9" : "./vendor/bin/phpstan analyse --level=9"
+        "analyse-l9" : "./vendor/bin/phpstan analyse --level=9",
+        "fix" : "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes"
     },
     "extra": {
         "laravel": {
