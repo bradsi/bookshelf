@@ -13,7 +13,8 @@ class Author extends Model
     /**
      * The book(s) that this author has written.
      */
-    public function books(): BelongsToMany {
+    public function books(): BelongsToMany
+    {
         return $this->belongsToMany(Book::class);
     }
 }

@@ -12,7 +12,7 @@ class PublisherSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         Publisher::factory()->count(40)->create();
     }
