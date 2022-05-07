@@ -1,6 +1,3 @@
-![](assets/bookshelf-dark.png#gh-dark-mode-only)
-![](assets/bookshelf-light.png#gh-light-mode-only)
-
 Bookshelf is a toy project I'm building to do some learning experiments.
 
 My goals with the project are as follows:
