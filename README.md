@@ -8,7 +8,7 @@ Bookshelf is a toy project I'm building to do some learning experiments.
 - [ ] Put into practice what I've learned from Jonathan Reinink's Eloquent Performance Patterns course
 - [ ] Try to identify some functionality that can be extracted from the application and built into a package
 - [ ] Deploy the application on AWS
-- [ ] Improve Actions or Pipelines to run CD on the application
+- [ ] Improve Actions to run CD on the application
 - [ ] Put into practice what I've learned from the Refactoring UI course
 - [ ] Play around with [Mermaid.js](https://github.com/mermaid-js/mermaid); alternatively use draw.io to diagram some processes, but I like the idea of 'diagrams as code'
 - [ ] Implement [Shepherd.js](https://github.com/shipshapecode/shepherd)
@@ -18,7 +18,6 @@ Bookshelf is a toy project I'm building to do some learning experiments.
 - [ ] Documentation
 - [ ] PWA
 - [ ] Make a nice README
-- [ ] Implement GitHub Actions for: Pest & PCOV
 - [ ] Implement roles and permissions
 
 ## Done:
@@ -29,4 +28,5 @@ Bookshelf is a toy project I'm building to do some learning experiments.
   - [x] Dependency Review - dependency vulnerability check
   - [x] PHP CS Fixer - styling / formatting
   - [x] PHPStan - static code analysis
+  - [x] Pest and PCOV - unit tests, feature tests, and code coverage
 - [x] Implement Dependabot to keep track of security flaws
