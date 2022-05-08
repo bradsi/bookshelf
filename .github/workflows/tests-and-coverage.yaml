@@ -34,7 +34,7 @@ jobs:
         run: php artisan config:clear
 
       - name: Run Unit and Feature Tests with Pest
-        run: vendor/bin/phpunit --coverage
+        run: vendor/bin/pest --coverage
 
 #      - name: Run Unit and Feature Tests with Pest
 #        uses: php-actions/phpunit@v3
