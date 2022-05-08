@@ -1,0 +1,54 @@
+name: Tests and Code Coverage
+
+on: [pull_request]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+#      - name: Install composer and dependencies
+#        uses: php-actions/composer@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+#        run: | composer require pcov/clobber && vendor/bin/pcov clobber
+        with:
+          php-version: '7.4'
+          extensions: pcov
+          coverage: pcov
+          tools: composer, phpunit
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Prepare the application
+        run: |
+            php -r "file_exists('.env') || copy('.env.example', '.env');"
+            php artisan key:generate
+
+      - name: Clear Config
+        run: php artisan config:clear
+
+      - name: Run Unit and Feature Tests with Pest
+        run: vendor/bin/phpunit --coverage
+
+#      - name: Run Unit and Feature Tests with Pest
+#        uses: php-actions/phpunit@v3
+#        env:
+#          XDEBUG_MODE: coverage
+#        with:
+#          bootstrap: vendor/autoload.php
+#          configuration: phpunit.xml
+#          php_extensions: xdebug
+#          args: tests --coverage-clover ./coverage.xml
+
+#      - name: Upload to Codecov
+#        uses: codecov/codecov-action@v2
+#        with:
+#          token: ${{ secrets.CODE_COV_TOKEN }}
+#          files: ./coverage.xml
+#          verbose: true
