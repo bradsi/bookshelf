@@ -3,7 +3,31 @@
 
 Bookshelf is a toy project I'm building to do some learning experiments.
 
-## Todo:
+## Installation
+1) Clone the repo
+```bash
+gh repo clone bradsi/bookshelf && cd bookshelf
+```
+
+2) Create the database
+```bash
+mysql -u root -p
+create database bookshelf;
+exit;
+```
+
+3) Install dependencies, migrate and start the demo
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+npm install
+php artisan migrate --seed
+php artisan serve
+```
+
+
+## Todo
 - [ ] CRUD features
 - [ ] Use [Rector](https://github.com/rectorphp/rector) and/or [Rector Laravel](https://github.com/rectorphp/rector-laravel) to upgrade from PHP 7.4 to PHP 8.1
 - [ ] Practice unit testing and feature testing using [Pest](https://github.com/pestphp/pest) and implement [PCOV](https://github.com/krakjoe/pcov)
@@ -23,7 +47,7 @@ Bookshelf is a toy project I'm building to do some learning experiments.
 - [ ] Make a nice README
 - [ ] Implement roles and permissions
 
-## Done:
+## Done
 - [x] Create a style guide based on [PSR](https://www.php-fig.org/psr/)
 - [x] Implement the style guide with [PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 - [x] Implement static analysis with [PHPStan](https://github.com/phpstan/phpstan) and [Larastan](https://github.com/nunomaduro/larastan)
