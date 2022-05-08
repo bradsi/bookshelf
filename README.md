@@ -1,3 +1,6 @@
+![build](https://github.com/bradsi/bookshelf/actions/workflows/tests-and-coverage/badge.svg)  
+[![coverage](https://codecov.io/gh/bradsi/bookshelf/branch/main/graph/badge.svg?token=LR0D234IJQ)](https://codecov.io/gh/bradsi/bookshelf)
+
 Bookshelf is a toy project I'm building to do some learning experiments.
 
 ## Todo:
