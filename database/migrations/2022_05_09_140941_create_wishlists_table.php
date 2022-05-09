@@ -13,10 +13,10 @@ class CreateWishlistsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         // TODO: having a primary ID on the pivot table probably isn't the best way to do this, will look at this later.
-        Schema::create('wishlists', function (Blueprint $table) {
+        Schema::create('wishlists', function (Blueprint $table): void {
             $table->id();
             $table->foreignIdFor(User::class)->constrained();
             $table->foreignIdFor(Book::class)->constrained();
@@ -29,7 +29,7 @@ class CreateWishlistsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('wishlists');
     }

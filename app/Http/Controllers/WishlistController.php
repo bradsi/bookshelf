@@ -14,7 +14,7 @@ class WishlistController extends Controller
         ]);
     }
 
-    public function store(Book $book)
+    public function store(Book $book): void
     {
         $duplicate_check = Wishlist::where('user_id', auth()->id())->where('book_id', $book->id)->first();
 
