@@ -12,6 +12,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
     Route::post('/wishlist/{book}', [WishlistController::class, 'store'])->name('wishlist.store');
+    Route::delete('/wishlist/{id}', [WishlistController::class, 'destroy'])->name('wishlist.destroy');
 
     Route::get('/bookshelf', fn () => view('bookshelf.index'))->name('bookshelf.index');
 

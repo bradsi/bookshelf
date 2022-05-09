@@ -29,4 +29,11 @@ class WishlistController extends Controller
 
         dd("wishlist item created with user id $wishlist_item->user_id and book id $wishlist_item->book_id");
     }
+
+    public function destroy(int $id)
+    {
+        Wishlist::destroy($id);
+
+        return redirect()->route('wishlist.index');
+    }
 }

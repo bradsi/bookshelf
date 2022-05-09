@@ -35,7 +35,7 @@
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $item->book->pages }}</td>
                                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                         <a href="{{ route('books.show', $item->book->slug) }}" class="text-indigo-600 hover:text-indigo-900">View</a>
-                                        <form action="{{ route('wishlist.destroy', $item->book) }}" method="POST" class="inline-block">
+                                        <form action="{{ route('wishlist.destroy', $item->id) }}" method="POST" class="inline-block">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="text-indigo-600 hover:text-indigo-900">
