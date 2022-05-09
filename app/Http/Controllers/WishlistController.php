@@ -7,6 +7,13 @@ use App\Models\Wishlist;
 
 class WishlistController extends Controller
 {
+    public function index()
+    {
+        return view('wishlist.index', [
+            'wishlist' => Wishlist::with('book')->where('user_id', auth()->id())->paginate(10),
+        ]);
+    }
+
     public function store(Book $book)
     {
         $duplicate_check = Wishlist::where('user_id', auth()->id())->where('book_id', $book->id)->first();
