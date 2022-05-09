@@ -22,12 +22,12 @@ class WishlistController extends Controller
             dd("book already added to wishlist with book id equals $duplicate_check->book_id");
         }
 
-        $wishlist_item = Wishlist::create([
+        Wishlist::create([
             'user_id' => auth()->id(),
             'book_id' => $book->id,
         ]);
 
-        dd("wishlist item created with user id $wishlist_item->user_id and book id $wishlist_item->book_id");
+        dd('wishlist item created with user id ' . auth()->id() . 'and book id ' . $book->id);
     }
 
     public function destroy(int $id)

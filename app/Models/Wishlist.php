@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @mixin Builder
+ *
+ * @property int $user_id
+ * @property int $book_id
+ *
  */
 class Wishlist extends Model
 {
