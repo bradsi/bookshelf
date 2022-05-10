@@ -19,6 +19,7 @@
                     $textColor = 'text-green-700';
                     $closeButton = 'text-green-500';
                     $onHover = 'hover:bg-green-100';
+                    $loadingBarColor = 'bg-green-600';
                 @endphp
             @endif
 
@@ -29,6 +30,7 @@
                     $textColor = 'text-blue-700';
                     $closeButton = 'text-blue-500';
                     $onHover = 'hover:bg-blue-100';
+                    $loadingBarColor = 'bg-blue-600';
                 @endphp
             @endif
 
@@ -39,6 +41,7 @@
                     $textColor = 'text-yellow-700';
                     $closeButton = 'text-yellow-500';
                     $onHover = 'hover:bg-yellow-100';
+                    $loadingBarColor = 'bg-yellow-600';
                 @endphp
             @endif
 
@@ -49,10 +52,14 @@
                     $textColor = 'text-red-700';
                     $closeButton = 'text-red-500';
                     $onHover = 'hover:bg-red-100';
+                    $loadingBarColor = 'bg-red-600';
                 @endphp
             @endif
 
             <div id="notification" class="max-w-sm w-full {{ $background }} shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+                <div class="{{ $background }} w-full h-2">
+                    <div id="progressBar" class="{{ $loadingBarColor }} h-2"></div>
+                </div>
                 <div class="p-4">
                     <div class="flex items-start">
                         <div class="flex-shrink-0">
@@ -123,9 +130,31 @@
     </div>
 </div>
 
+<style>
+    #progressBar {
+        animation-name: progress;
+        animation-duration: 4s;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes progress {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+</style>
+
 <script>
+    const notification = document.getElementById('notification');
+
+    setTimeout(function() {
+        notification.remove();
+    }, 4100);
+
     function dismissNotification() {
-        const notification = document.getElementById('notification');
         notification.remove();
     }
 </script>
