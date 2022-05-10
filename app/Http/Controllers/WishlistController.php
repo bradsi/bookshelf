@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Wishlist;
+use Illuminate\Http\RedirectResponse;
 
 class WishlistController extends Controller
 {
@@ -14,12 +15,18 @@ class WishlistController extends Controller
         ]);
     }
 
-    public function store(Book $book): void
+    public function store(Book $book): RedirectResponse
     {
-        $duplicate_check = Wishlist::where('user_id', auth()->id())->where('book_id', $book->id)->first();
+        $already_on_wishlist = Wishlist::where('user_id', auth()->id())->where('book_id', $book->id)->first();
 
-        if ($duplicate_check) {
-            dd("book already added to wishlist with book id equals $duplicate_check->book_id");
+        if ($already_on_wishlist) {
+            session()->flash('flash_data', [
+                'type' => 'info',
+                'title' => 'Already on Wishlist',
+                'message' => 'This book is already on your Wishlist. No further action has been taken.',
+            ]);
+
+            return redirect()->route('books.index');
         }
 
         Wishlist::create([
@@ -27,12 +34,25 @@ class WishlistController extends Controller
             'book_id' => $book->id,
         ]);
 
-        dd('wishlist item created with user id ' . auth()->id() . 'and book id ' . $book->id);
+        session()->flash('flash_data', [
+            'type' => 'success',
+            'title' => 'Added to Wishlist',
+            'message' => 'Book successfully added to your Wishlist.',
+        ]);
+
+        return redirect()->route('books.index');
+
     }
 
-    public function destroy(int $id)
+    public function destroy(int $id): RedirectResponse
     {
         Wishlist::destroy($id);
+
+        session()->flash('flash_data', [
+            'type' => 'success',
+            'title' => 'Removed from Wishlist',
+            'message' => 'Book successfully removed from your Wishlist.',
+        ]);
 
         return redirect()->route('wishlist.index');
     }
