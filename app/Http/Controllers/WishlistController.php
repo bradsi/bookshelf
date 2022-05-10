@@ -41,7 +41,6 @@ class WishlistController extends Controller
         ]);
 
         return redirect()->route('books.index');
-
     }
 
     public function destroy(int $id): RedirectResponse
