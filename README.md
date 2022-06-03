@@ -28,9 +28,7 @@ php artisan serve
 
 
 ## Todo
-- [ ] CRUD features
-- [ ] Use [Rector](https://github.com/rectorphp/rector) and/or [Rector Laravel](https://github.com/rectorphp/rector-laravel) to upgrade from PHP 7.4 to PHP 8.1
-- [ ] Practice unit testing and feature testing using [Pest](https://github.com/pestphp/pest) and implement [PCOV](https://github.com/krakjoe/pcov)
+- [ ] Practice unit testing and feature testing using [Pest](https://github.com/pestphp/pest).
 - [ ] Containerise the application using Docker
 - [ ] Put into practice what I've learned from Jonathan Reinink's Eloquent Performance Patterns course
 - [ ] Try to identify some functionality that can be extracted from the application and built into a package
@@ -48,6 +46,8 @@ php artisan serve
 - [ ] Implement roles and permissions
 
 ## Done
+- [x] CRUD features
+- [x] Use [Rector](https://github.com/rectorphp/rector) and/or [Rector Laravel](https://github.com/rectorphp/rector-laravel) to upgrade from PHP 7.4 to PHP 8.1
 - [x] Create a style guide based on [PSR](https://www.php-fig.org/psr/)
 - [x] Implement the style guide with [PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 - [x] Implement static analysis with [PHPStan](https://github.com/phpstan/phpstan) and [Larastan](https://github.com/nunomaduro/larastan)
