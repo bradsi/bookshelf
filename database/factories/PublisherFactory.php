@@ -8,7 +8,6 @@ use Illuminate\Support\Str;
 
 class PublisherFactory extends Factory
 {
-
     /**
      * The name of the factory's corresponding model.
      *
@@ -31,7 +30,7 @@ class PublisherFactory extends Factory
             'ceased_trading' => $this->faker->optional(0.1)->date,
             'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->companyEmail,
-            'website' => $this->faker->domainName
+            'website' => $this->faker->domainName,
         ];
     }
 }
