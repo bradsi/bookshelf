@@ -45,7 +45,7 @@ class BookshelfController extends Controller
 
     public function update(Bookshelf $bookshelf): RedirectResponse
     {
-        $bookshelf->update(['read' => !$bookshelf->read]);
+        $bookshelf->update(['read' => ! $bookshelf->read]);
 
         $new_status = $bookshelf->read === true ? 'read' : 'unread';
 
