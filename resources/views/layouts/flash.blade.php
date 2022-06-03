@@ -150,11 +150,15 @@
 <script>
     const notification = document.getElementById('notification');
 
-    setTimeout(function() {
-        notification.remove();
-    }, 4100);
+    if (notification !== null) {
 
-    function dismissNotification() {
-        notification.remove();
+        setTimeout(function () {
+            notification.remove();
+        }, 4100);
+
+        function dismissNotification() {
+            notification.remove();
+        }
+
     }
 </script>
