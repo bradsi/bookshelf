@@ -9,8 +9,6 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -20,10 +18,10 @@ class DatabaseSeeder extends Seeder
             BookSeeder::class,
         ]);
 
-        for ($i = 0; $i <= rand(100, 400); $i++) {
+        for ($i = 0; $i <= random_int(100, 400); $i++) {
             DB::table('author_book')->insert([
-                'author_id' => rand(1, 4000),
-                'book_id' => rand(1, 5000),
+                'author_id' => random_int(1, 4000),
+                'book_id' => random_int(1, 5000),
             ]);
         }
     }

@@ -17,7 +17,7 @@ jobs:
         uses: shivammathur/setup-php@v2
 #        run: | composer require pcov/clobber && vendor/bin/pcov clobber
         with:
-          php-version: '7.4'
+          php-version: '8.1'
           extensions: pcov
           coverage: pcov
           tools: composer, phpunit
