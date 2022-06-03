@@ -21,7 +21,6 @@ class Book extends Model
 
     /**
      * The author(s) that have written this book.
-     * @return BelongsToMany
      */
     public function authors(): BelongsToMany
     {
@@ -30,7 +29,6 @@ class Book extends Model
 
     /**
      * The publisher that has published this book.
-     * @return BelongsTo
      */
     public function publisher(): BelongsTo
     {

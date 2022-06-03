@@ -18,8 +18,6 @@ class BookFactory extends Factory
 
     /**
      * Define the model's default state.
-     *
-     * @return array
      */
     public function definition(): array
     {
@@ -28,7 +26,7 @@ class BookFactory extends Factory
 
         return [
             'isbn' => $this->faker->isbn13(),
-            'title' => Str::title($this->faker->words(rand(2, 5), true)),
+            'title' => Str::title($this->faker->words(random_int(2, 5), true)),
             'slug' => $this->faker->slug(3),
             'publisher_id' => $publisher_id,
             'publish_date' => $this->faker->date,
