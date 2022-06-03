@@ -1,5 +1,4 @@
 /node_modules
-/public/*
 /storage/*.key
 /vendor
 .env
@@ -12,5 +11,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+.DS_Store
 
 ./coverage.xml
