@@ -17,6 +17,7 @@ class BookshelfController extends Controller
 
     public function store(Book $book): RedirectResponse
     {
+        // TODO add scope: belongingToAuthUser
         $already_on_bookshelf = Bookshelf::where('user_id', auth()->id())->where('book_id', $book->id)->first();
 
         if ($already_on_bookshelf) {
