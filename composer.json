@@ -58,7 +58,9 @@
         "analyse-l8" : "./vendor/bin/phpstan analyse --level=8",
         "analyse-l9" : "./vendor/bin/phpstan analyse --level=9",
         "fix" : "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes",
-        "rector" : "./vendor/bin/rector process"
+        "rector" : "./vendor/bin/rector process",
+        "test" : "./vendor/bin/pest",
+        "coverage" : "./vendor/bin/pest --coverage",
     },
     "extra": {
         "laravel": {
