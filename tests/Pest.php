@@ -12,7 +12,11 @@
 |
 */
 
-uses(Tests\TestCase::class)->in('Feature', 'Unit');
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use function Pest\Laravel\actingAs;
+
+uses(Tests\TestCase::class, RefreshDatabase::class)->in('Feature', 'Unit');
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +43,11 @@ expect()->extend('toBeOne', function () {
 | global functions to help you to reduce the number of lines of code in your test files.
 |
 */
+
+function login(): void
+{
+    actingAs(User::factory()->create());
+}
 
 function something(): void
 {

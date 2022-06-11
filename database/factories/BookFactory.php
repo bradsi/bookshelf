@@ -21,16 +21,23 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
-        $publisher_ids = Publisher::select('id')->get();
-        $publisher_id = $this->faker->randomElement($publisher_ids)->id;
+//        $publisher_ids = Publisher::select('id')->get()->toArray();
+//        $publisher_id = $this->faker->randomElement($publisher_ids)->id;
+
+        $publisher = Publisher::factory()->create();
 
         return [
             'isbn' => $this->faker->isbn13(),
             'title' => Str::title($this->faker->words(random_int(2, 5), true)),
             'slug' => $this->faker->slug(3),
-            'publisher_id' => $publisher_id,
+            'publisher_id' => $publisher->id,
             'publish_date' => $this->faker->date,
             'pages' => $this->faker->randomNumber(3, true),
         ];
+    }
+
+    public function withAuthors(): void
+    {
+
     }
 }
