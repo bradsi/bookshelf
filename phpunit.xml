@@ -5,17 +5,37 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+        <testsuite name="All Tests">
+            <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
-            <directory suffix=".php">./app</directory>
+            <directory suffix=".php">app</directory>
         </include>
+        <exclude>
+            <directory suffix=".php">app/Http/Controllers/Auth</directory>
+            <file>app/Console/Kernel.php</file>
+            <file>app/Exceptions/Handler.php</file>
+            <file>app/Http/Kernel.php</file>
+            <file>app/Http/Requests/Auth/LoginRequest.php</file>
+            <file>app/Http/Middleware/Authenticate.php</file>
+            <file>app/Http/Middleware/EncryptCookies.php</file>
+            <file>app/Http/Middleware/PreventRequestsDuringMaintenance.php</file>
+            <file>app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>app/Http/Middleware/TrimStrings.php</file>
+            <file>app/Http/Middleware/TrustHosts.php</file>
+            <file>app/Http/Middleware/TrustProxies.php</file>
+            <file>app/Http/Middleware/VerifyCsrfToken.php</file>
+            <file>app/Http/Middleware/LoginRequest.php</file>
+            <file>app/Providers/AppServiceProvider.php</file>
+            <file>app/Providers/AuthServiceProvider.php</file>
+            <file>app/Providers/BroadcastServiceProvider.php</file>
+            <file>app/Providers/EventServiceProvider.php</file>
+            <file>app/Providers/RouteServiceProvider.php</file>
+            <file>app/View/Components/AppLayout.php</file>
+            <file>app/View/Components/GuestLayout.php</file>
+        </exclude>
         <report>
             <clover outputFile="./coverage.xml"/>
         </report>
